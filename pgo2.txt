@@ -1,0 +1,99 @@
+import java.util.Scanner;
+//ZADANIE 1
+/*
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Podaj markę telfonu");
+        
+	String brand = in.nextLine();
+        System.out.println("Podaj rozdzielczość ekranu");
+        int resolution = in.nextInt();
+        
+	System.out.println("Podaj numer telefonu");
+        int number = in.nextInt();
+
+        Telephone t = new Telephone(brand, resolution, number);
+        in.nextLine();
+        
+	System.out.println("Podaj wiadomość");
+        String message = in.nextLine();
+
+        t.sendmessage(number, message);
+        in.close();
+    }
+}
+class Telephone
+{
+    String brand;
+    int resolution;
+    int number;
+
+    public Telephone(String brand, int resolution, int number)
+    {
+        this.brand = brand;
+        this.resolution = resolution;
+        this.number = number;
+    }
+    public void sendmessage(int newnumber, String message)
+    {
+        System.out.println("Wysłano wiadomość " + message + " na numer " + newnumber);
+    }
+}*/
+//ZADANIE 2 i 3
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Podaj markę samochodu");
+        
+	String brand = in.nextLine();
+        System.out.println("Podaj kolor samochodu");
+        
+	String color = in.nextLine();
+        System.out.println("Podaj pojemność silnika (litry)");
+        float capacity = in.nextFloat();
+        Car t = new Car(brand, color, capacity);
+
+        t.kolorIMarka(brand, color);
+        t.czyWysokoobrotowy(capacity);
+        System.out.println("Podaj nową pojemność silnika (litry)");
+        capacity = in.nextFloat();
+        t.czyWysokoobrotowy(capacity);
+        in.close();
+    }
+}
+class Car
+{
+    String brand;
+    String color;
+    float capacity;
+
+    public Car(String brand, String color, float capacity)
+    {
+        this.brand = brand;
+        this.color = color;
+        this.capacity = capacity;
+    }
+    public void kolorIMarka(String brand, String color)
+    {
+        System.out.println("Kolor: " + color);
+        System.out.println("Marka: " + brand);
+    }
+    public void czyWysokoobrotowy(float capacity)
+    {
+        if(capacity >= 2)
+        {
+            System.out.println("Silnik wysokoobrotowy");
+        }
+        else System.out.println("Silnik nie jest wysokoobrotowy");
+    }
+    public void setCapacity(float newValue)
+    {
+        this.capacity = newValue;
+    }
+
+}
